@@ -1,24 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="PinIt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ky-wm-smC">
+                                <rect key="frame" x="295" y="68" width="60" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="G66-Ti-FKh"/>
+                                    <constraint firstAttribute="height" constant="45" id="lwE-yV-jRp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="guessSubmitted:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UsW-Bv-JVE"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. City name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7LY-6S-YeN">
+                                <rect key="frame" x="20" y="78" width="249" height="28.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28.5" id="35z-BR-N8m"/>
+                                    <constraint firstAttribute="width" constant="249" id="NeU-ZS-ifx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="clI-CX-6YJ">
+                                <rect key="frame" x="0.0" y="150" width="375" height="517"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="FMs-Ub-04d" appends="YES" id="sY4-pp-Opv"/>
+                                </connections>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4d-GK-NwE">
+                                <rect key="frame" x="163" y="121" width="189" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="25w-my-jX8"/>
+                                    <constraint firstAttribute="width" constant="189" id="Rmc-9C-jeR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="clI-CX-6YJ" firstAttribute="top" secondItem="7LY-6S-YeN" secondAttribute="bottom" constant="43.5" id="HlX-a5-Hbc"/>
+                            <constraint firstItem="clI-CX-6YJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ppz-wT-fY6"/>
+                            <constraint firstItem="7LY-6S-YeN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="S7K-yc-mFf"/>
+                            <constraint firstAttribute="bottom" secondItem="clI-CX-6YJ" secondAttribute="bottom" id="Yqw-lv-8oe"/>
+                            <constraint firstItem="7ky-wm-smC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7LY-6S-YeN" secondAttribute="trailing" constant="20" id="akA-bn-Svc"/>
+                            <constraint firstItem="7ky-wm-smC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="68" id="dGg-8Q-WFt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7ky-wm-smC" secondAttribute="trailing" constant="20" id="eBk-Pz-KvV"/>
+                            <constraint firstItem="clI-CX-6YJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="150" id="gSW-5a-QlB"/>
+                            <constraint firstItem="clI-CX-6YJ" firstAttribute="top" secondItem="j4d-GK-NwE" secondAttribute="bottom" constant="8" id="pUB-7i-rEB"/>
+                            <constraint firstItem="clI-CX-6YJ" firstAttribute="top" secondItem="7ky-wm-smC" secondAttribute="bottom" constant="37" id="syD-9e-byp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="j4d-GK-NwE" secondAttribute="trailing" constant="23" id="tB3-L8-RR8"/>
+                            <constraint firstAttribute="trailing" secondItem="clI-CX-6YJ" secondAttribute="trailing" id="ufW-Q7-TOa"/>
+                            <constraint firstItem="7LY-6S-YeN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="78" id="xeb-Z0-Lod"/>
+                            <constraint firstItem="j4d-GK-NwE" firstAttribute="top" secondItem="7ky-wm-smC" secondAttribute="bottom" constant="8" id="zZb-wK-y8Y"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="cityNameLabel" destination="7LY-6S-YeN" id="Lnv-z8-Awd"/>
+                        <outlet property="doneButton" destination="7ky-wm-smC" id="dgb-Dy-I04"/>
+                        <outlet property="mapView" destination="clI-CX-6YJ" id="wjF-Cf-zvm"/>
+                        <outlet property="scoreLabel" destination="j4d-GK-NwE" id="w27-Wp-PA6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="FMs-Ub-04d">
+                    <connections>
+                        <action selector="longTapRecognizer:" destination="BYZ-38-t0r" id="6m8-04-6e8"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
