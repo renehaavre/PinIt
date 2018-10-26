@@ -19,6 +19,7 @@ class GameViewController: UIViewController, MKMapViewDelegate {
         if sender.state == .ended {
             let locationOnMap = sender.location(in: mapView)
             let tappedCoordinate = mapView.convert(locationOnMap, toCoordinateFrom: mapView)
+            removeAnnotations()
             addAnnotation(coords: tappedCoordinate)
         }
 
@@ -120,6 +121,9 @@ class GameViewController: UIViewController, MKMapViewDelegate {
     
     @objc func getNewLocation() {
         
+        // If there are no elements left in collection return early
+        if locationsAndCoordinates.count < 1 { return }
+        
         // Update UI state
         doneButton.setTitle("Done", for: .normal)
         removeAnnotations()
@@ -139,8 +143,9 @@ class GameViewController: UIViewController, MKMapViewDelegate {
         
         correctLocation = CLLocation(latitude: (coordsArray[0] as NSString).doubleValue, longitude: (coordsArray[1] as NSString).doubleValue)
         
-        // For debugging show correct location
-        //        addAnnotation(coords: CLLocationCoordinate2D(latitude: correctLocation.coordinate.latitude, longitude: correctLocation.coordinate.longitude))
+        
+        // Remove used locations from array
+        locationsAndCoordinates.removeValue(forKey: location)
         
     }
     
