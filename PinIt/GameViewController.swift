@@ -48,6 +48,7 @@ class GameViewController: UIViewController, MKMapViewDelegate {
     
     @IBAction func guessSubmitted(_ sender: UIButton) {
         if (sender.titleLabel?.text == "Done") {
+            if mapView.annotations.count == 0 { return }
             let location = CLLocation(latitude: guess.coordinate.latitude, longitude: guess.coordinate.longitude)
             let distance = correctLocation.distance(from: location).rounded() / 1000
             
