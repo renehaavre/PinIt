@@ -61,6 +61,7 @@ class GameViewController: UIViewController, MKMapViewDelegate {
             
             // Update score
             score += Int(distance)
+            scoreLabel.text = String("Points: \(score)")
             
             // TODO: Zoom out so that guess and correct answer form a bounding box - mapView.showAnnotations
             mapView.showAnnotations(mapView.annotations, animated: true)

@@ -1,4 +1,6 @@
-Eiffel Tower|59.4370 24.7536
-Grand Canyon|40.7128 74.0060
-Uluru Rock|48.8566 2.3522
-Tower of Pisa|21.0278 105.8342
+Eiffel Tower|48.858093 2.294694
+Grand Canyon|36.056595 -112.125092
+Uluru Rock|-25.344490 131.035431
+Tower of Pisa|43.7230 10.3966
+Taj Mahal|27.173891 78.042068
+Mount Fuji|35.360638 138.729050
