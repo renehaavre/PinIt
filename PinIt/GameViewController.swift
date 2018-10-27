@@ -69,7 +69,6 @@ class GameViewController: UIViewController, MKMapViewDelegate {
                 self.present(alert, animated: true)
             }
             else {
-                updateProgressBar()
                 getNewLocation()
             }
             
@@ -82,21 +81,11 @@ class GameViewController: UIViewController, MKMapViewDelegate {
         
         mapView.delegate = self
         mapView.mapType = .satellite
-        updateProgressBar()
         
         getLocations()
         getNewLocation()
         
         print("Game type: \(gameType)")
-    }
-    
-    func updateProgressBar() {
-        let progressBarWidth = view.frame.width / 10
-        let progressRect = CGRect(x: 0.0, y: 145.0, width: progressBarWidth * CGFloat(level + 1), height: 5)
-        let progress = UIView(frame: progressRect)
-        progress.backgroundColor = UIColor(displayP3Red: 0, green: 255, blue: 0, alpha: 0.8)
-        
-        view.addSubview(progress)
     }
 
     func getLocations() {
@@ -188,7 +177,6 @@ class GameViewController: UIViewController, MKMapViewDelegate {
     func startNewGame() {
         // Reset the UI
         level = 0
-        updateProgressBar()
         score = 0
         scoreLabel.text = String("Points: \(score)")
         getLocations()

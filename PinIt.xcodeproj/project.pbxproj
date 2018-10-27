@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9475CF392184A5920060A395 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9475CF382184A5910060A395 /* bg.jpg */; };
+		9475CF3B2184A8810060A395 /* bg1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9475CF3A2184A8800060A395 /* bg1.jpg */; };
+		9475CF3F2184B1E50060A395 /* pinit.png in Resources */ = {isa = PBXBuildFile; fileRef = 9475CF3E2184B1E40060A395 /* pinit.png */; };
+		9475CF412184EF560060A395 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9475CF402184EF560060A395 /* MenuButton.swift */; };
 		94E39ECC2183383100D11274 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E39ECB2183383100D11274 /* AppDelegate.swift */; };
 		94E39ECE2183383100D11274 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E39ECD2183383100D11274 /* GameViewController.swift */; };
 		94E39ED12183383100D11274 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94E39ECF2183383100D11274 /* Main.storyboard */; };
@@ -19,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9475CF382184A5910060A395 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
+		9475CF3A2184A8800060A395 /* bg1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg1.jpg; sourceTree = "<group>"; };
+		9475CF3E2184B1E40060A395 /* pinit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinit.png; sourceTree = "<group>"; };
+		9475CF402184EF560060A395 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		94E39EC82183383100D11274 /* PinIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PinIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94E39ECB2183383100D11274 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94E39ECD2183383100D11274 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -65,12 +73,16 @@
 				94E39ECB2183383100D11274 /* AppDelegate.swift */,
 				94E39ECD2183383100D11274 /* GameViewController.swift */,
 				94E39EE121837B9700D11274 /* MenuViewController.swift */,
+				9475CF402184EF560060A395 /* MenuButton.swift */,
 				94E39EE321837D7400D11274 /* UIView+Extension.swift */,
 				94E39ECF2183383100D11274 /* Main.storyboard */,
 				94E39ED22183383200D11274 /* Assets.xcassets */,
 				94E39ED42183383200D11274 /* LaunchScreen.storyboard */,
 				94E39EDD2183406700D11274 /* landmarks.txt */,
 				94E39EDE2183406700D11274 /* locations.txt */,
+				9475CF382184A5910060A395 /* bg.jpg */,
+				9475CF3A2184A8800060A395 /* bg1.jpg */,
+				9475CF3E2184B1E40060A395 /* pinit.png */,
 				94E39ED72183383200D11274 /* Info.plist */,
 			);
 			path = PinIt;
@@ -134,10 +146,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9475CF3F2184B1E50060A395 /* pinit.png in Resources */,
 				94E39EDF2183406700D11274 /* landmarks.txt in Resources */,
 				94E39ED62183383200D11274 /* LaunchScreen.storyboard in Resources */,
 				94E39ED32183383200D11274 /* Assets.xcassets in Resources */,
 				94E39ED12183383100D11274 /* Main.storyboard in Resources */,
+				9475CF3B2184A8810060A395 /* bg1.jpg in Resources */,
+				9475CF392184A5920060A395 /* bg.jpg in Resources */,
 				94E39EE02183406700D11274 /* locations.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,6 +166,7 @@
 			files = (
 				94E39ECE2183383100D11274 /* GameViewController.swift in Sources */,
 				94E39EE221837B9700D11274 /* MenuViewController.swift in Sources */,
+				9475CF412184EF560060A395 /* MenuButton.swift in Sources */,
 				94E39EE421837D7400D11274 /* UIView+Extension.swift in Sources */,
 				94E39ECC2183383100D11274 /* AppDelegate.swift in Sources */,
 			);

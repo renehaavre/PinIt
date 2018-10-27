@@ -14,6 +14,8 @@ class MenuViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        view.setGradientBackground(firstColor: UIColor(red:0.00, green:0.47, blue:0.57, alpha:1.0), secondColor: UIColor(red:0.47, green:1.00, blue:0.84, alpha:1.0))
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
