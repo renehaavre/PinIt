@@ -35,16 +35,7 @@ class GameViewController: UIViewController, MKMapViewDelegate {
         }
     }
     var score: Int = 0
-    var level: Int = 0 {
-        didSet {
-            if level >= 10 {
-                let alert = UIAlertController(title: "Your score is \(score)!", message: "Lower is better.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Go again", style: .default, handler: nil))
-                
-                self.present(alert, animated: true)
-            }
-        }
-    }
+    var level: Int = 0
     
     @IBAction func guessSubmitted(_ sender: UIButton) {
         if (sender.titleLabel?.text == "Done") {
@@ -69,7 +60,19 @@ class GameViewController: UIViewController, MKMapViewDelegate {
             mapView.showAnnotations(mapView.annotations, animated: true)
         }
         else {
-            getNewLocation()
+            if level > 9 {
+                let alert = UIAlertController(title: "Your score is \(score)!", message: "Lower is better.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Go again", style: .default, handler: { _ in
+                    self.startNewGame()
+                }))
+                
+                self.present(alert, animated: true)
+            }
+            else {
+                updateProgressBar()
+                getNewLocation()
+            }
+            
         }
     }
     
@@ -79,11 +82,21 @@ class GameViewController: UIViewController, MKMapViewDelegate {
         
         mapView.delegate = self
         mapView.mapType = .satellite
+        updateProgressBar()
         
         getLocations()
         getNewLocation()
         
         print("Game type: \(gameType)")
+    }
+    
+    func updateProgressBar() {
+        let progressBarWidth = view.frame.width / 10
+        let progressRect = CGRect(x: 0.0, y: 145.0, width: progressBarWidth * CGFloat(level + 1), height: 5)
+        let progress = UIView(frame: progressRect)
+        progress.backgroundColor = UIColor(displayP3Red: 0, green: 255, blue: 0, alpha: 0.8)
+        
+        view.addSubview(progress)
     }
 
     func getLocations() {
@@ -123,7 +136,7 @@ class GameViewController: UIViewController, MKMapViewDelegate {
     @objc func getNewLocation() {
         
         // If there are no elements left in collection return early
-        if locationsAndCoordinates.count < 1 { return }
+        if locationsAndCoordinates.isEmpty { return }
         
         // Update UI state
         doneButton.setTitle("Done", for: .normal)
@@ -171,9 +184,17 @@ class GameViewController: UIViewController, MKMapViewDelegate {
         mapView.addAnnotation(annotation)
         guess = annotation
     }
-
-
-
+    
+    func startNewGame() {
+        // Reset the UI
+        level = 0
+        updateProgressBar()
+        score = 0
+        scoreLabel.text = String("Points: \(score)")
+        getLocations()
+        
+        getNewLocation()
+    }
 
 }
 
