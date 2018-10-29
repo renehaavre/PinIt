@@ -14,6 +14,7 @@ class GameViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet var cityNameLabel: UILabel!
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var mapView: MKMapView!
+    @IBOutlet var progressView: UIView!
     @IBOutlet var doneButton: UIButton!
     @IBAction func longTapRecognizer(_ sender: UILongPressGestureRecognizer) {
         if sender.state == .ended {
@@ -52,9 +53,10 @@ class GameViewController: UIViewController, MKMapViewDelegate {
             doneButton.setTitle("Next", for: .normal)
             addAnnotation(coords: CLLocationCoordinate2D(latitude: correctLocation.coordinate.latitude, longitude: correctLocation.coordinate.longitude))
             
-            // Update score
+            // Update UI
             score += Int(distance)
             scoreLabel.text = String("Points: \(score)")
+            updateProgressBar()
             
             // TODO: Zoom out so that guess and correct answer form a bounding box - mapView.showAnnotations
             mapView.showAnnotations(mapView.annotations, animated: true)
@@ -84,6 +86,7 @@ class GameViewController: UIViewController, MKMapViewDelegate {
         
         getLocations()
         getNewLocation()
+        progressView.frame.size = CGSize(width: 0, height: 0)
         
         print("Game type: \(gameType)")
     }
@@ -182,6 +185,12 @@ class GameViewController: UIViewController, MKMapViewDelegate {
         getLocations()
         
         getNewLocation()
+    }
+    
+    func updateProgressBar() {
+        let newHeight = Int(view.frame.width) / 10 * level
+        let newSize = CGSize(width: newHeight, height: 7)
+        progressView.frame.size = newSize
     }
 
 }
