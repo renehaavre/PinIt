@@ -16,6 +16,7 @@ class GameViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var progressView: UIView!
     @IBOutlet var doneButton: UIButton!
+    
     @IBAction func longTapRecognizer(_ sender: UILongPressGestureRecognizer) {
         if sender.state == .ended {
             let locationOnMap = sender.location(in: mapView)
@@ -58,7 +59,7 @@ class GameViewController: UIViewController, MKMapViewDelegate {
             scoreLabel.text = String("Points: \(score)")
             updateProgressBar()
             
-            // TODO: Zoom out so that guess and correct answer form a bounding box - mapView.showAnnotations
+            // Zoom out so that guess and correct answer form a bounding box
             mapView.showAnnotations(mapView.annotations, animated: true)
         }
         else {
@@ -79,7 +80,6 @@ class GameViewController: UIViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         mapView.delegate = self
         mapView.mapType = .satellite

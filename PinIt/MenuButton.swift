@@ -12,8 +12,6 @@ class MenuButton: UIButton {
 
     override func awakeFromNib() {
         layer.cornerRadius = 8
-//        backgroundColor = UIColor(red: 0.75, green: 0.20, blue: 0.19, alpha: 1.0)
-//        tintColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
     }
     /*
     // Only override draw() if you perform custom drawing.
