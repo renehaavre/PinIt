@@ -64,7 +64,7 @@ class GameViewController: UIViewController, MKMapViewDelegate {
             mapView.showAnnotations(mapView.annotations, animated: true)
         }
         else {
-            if level > 5 {
+            if level > 2 {
                 addHighScore()
                 
                 let alert = UIAlertController(title: "Your score is \(score)!", message: "Lower is better.", preferredStyle: .alert)
@@ -205,16 +205,44 @@ class GameViewController: UIViewController, MKMapViewDelegate {
         
         // Write score to Documents directory for persistant storage
         let highscore = String(String(score) + " " + formattedDate + "\n")
-            
-            let fileURL = highscoreDir!.appendingPathComponent("highscores")
-            
-            do {
-                try highscore.write(to: fileURL, atomically: false, encoding: .utf8)
-                let highscores = try? String(contentsOf: fileURL, encoding: .utf8)
-                print(highscores!)
-            }
-            catch {/* error handling here */}
+        let fileURL = highscoreDir!.appendingPathComponent("highscores")
+//
+//            do {
+//                try highscore.write(to: fileURL, atomically: false, encoding: .utf8)
+//                let highscores = try? String(contentsOf: fileURL, encoding: .utf8)
+//                print(highscores!)
+//            }
+//            catch {/* error handling here */}
         
+        
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+        let url = NSURL(fileURLWithPath: path)
+        
+        if let pathComponent = url.appendingPathComponent("highscores") {
+            let filePath = pathComponent.path
+            let fileManager = FileManager.default
+            if fileManager.fileExists(atPath: filePath) {
+                print("FILE AVAILABLE")
+                // Append results
+                do {
+                    let fileHandle = try FileHandle(forWritingTo: fileURL)
+                    fileHandle.seekToEndOfFile()
+                    fileHandle.write(highscore.data(using: .utf8)!)
+                    fileHandle.closeFile()
+//                    print(try? String(contentsOf: fileURL, encoding: .utf8))
+                } catch {
+                    print("Error writing to file \(error)")
+                }
+            } else {
+                print("FILE NOT AVAILABLE")
+                // Create file, append results
+                fileManager.createFile(atPath: filePath, contents: highscore.data(using: .utf8), attributes: nil)
+                
+            }
+        } else {
+            print("FILE PATH NOT AVAILABLE")
+            // Error
+        }
         
 
     }
