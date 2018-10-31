@@ -38,6 +38,7 @@ class GameViewController: UIViewController, MKMapViewDelegate {
     }
     var score: Int = 0
     var level: Int = 0
+    let highscoreDir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
     
     @IBAction func guessSubmitted(_ sender: UIButton) {
         if (sender.titleLabel?.text == "Done") {
@@ -63,7 +64,9 @@ class GameViewController: UIViewController, MKMapViewDelegate {
             mapView.showAnnotations(mapView.annotations, animated: true)
         }
         else {
-            if level > 9 {
+            if level > 5 {
+                addHighScore()
+                
                 let alert = UIAlertController(title: "Your score is \(score)!", message: "Lower is better.", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Go again", style: .default, handler: { _ in
                     self.startNewGame()
@@ -192,6 +195,38 @@ class GameViewController: UIViewController, MKMapViewDelegate {
         let newSize = CGSize(width: newHeight, height: 7)
         progressView.frame.size = newSize
     }
+    
+    func addHighScore() {
+        let currentDate = Date()
+        let formatter = DateFormatter()
+        
+        formatter.dateFormat = "dd.MM.yyyy"
+        let formattedDate = formatter.string(from: currentDate)
+        
+        // Write score to Documents directory for persistant storage
+        let highscore = String(String(score) + " " + formattedDate + "\n")
+            
+            let fileURL = highscoreDir!.appendingPathComponent("highscores")
+            
+            do {
+                try highscore.write(to: fileURL, atomically: false, encoding: .utf8)
+                let highscores = try? String(contentsOf: fileURL, encoding: .utf8)
+                print(highscores!)
+            }
+            catch {/* error handling here */}
+        
+        
+
+    }
+    
+//    func getHighScores() -> String {
+//        do {
+//            let highscores = try? String(contentsOf: fileURL, encoding: .utf8)
+//        }
+//        catch {/* error handling here */}
+//
+//        return highscores
+//    }
 
 }
 

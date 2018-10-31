@@ -8,17 +8,28 @@
 
 import UIKit
 
-class MenuButton: UIButton {
+@IBDesignable class MenuButton: UIButton {
 
     override func awakeFromNib() {
-        layer.cornerRadius = 8
+//        layer.cornerRadius = 8
     }
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    
+    @IBInspectable var borderWidth: CGFloat = 0.0 {
+        didSet {
+            self.layer.borderWidth = borderWidth
+        }
     }
-    */
-
+    
+    @IBInspectable var cornerRadius: CGFloat = 0 {
+        didSet {
+            self.layer.cornerRadius = cornerRadius
+        }
+    }
+    
+    @IBInspectable var borderColor: UIColor = UIColor.clear {
+        didSet {
+            self.layer.borderColor = borderColor.cgColor
+        }
+    }
+    
 }

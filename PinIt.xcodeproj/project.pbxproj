@@ -11,6 +11,8 @@
 		9475CF3B2184A8810060A395 /* bg1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9475CF3A2184A8800060A395 /* bg1.jpg */; };
 		9475CF3F2184B1E50060A395 /* pinit.png in Resources */ = {isa = PBXBuildFile; fileRef = 9475CF3E2184B1E40060A395 /* pinit.png */; };
 		9475CF412184EF560060A395 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9475CF402184EF560060A395 /* MenuButton.swift */; };
+		94D2472A2189043400EE71D0 /* PersistentDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D247292189043400EE71D0 /* PersistentDataStore.swift */; };
+		94D2472C218A49ED00EE71D0 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D2472B218A49ED00EE71D0 /* HelpViewController.swift */; };
 		94E39ECC2183383100D11274 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E39ECB2183383100D11274 /* AppDelegate.swift */; };
 		94E39ECE2183383100D11274 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E39ECD2183383100D11274 /* GameViewController.swift */; };
 		94E39ED12183383100D11274 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94E39ECF2183383100D11274 /* Main.storyboard */; };
@@ -27,6 +29,8 @@
 		9475CF3A2184A8800060A395 /* bg1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg1.jpg; sourceTree = "<group>"; };
 		9475CF3E2184B1E40060A395 /* pinit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinit.png; sourceTree = "<group>"; };
 		9475CF402184EF560060A395 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
+		94D247292189043400EE71D0 /* PersistentDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentDataStore.swift; sourceTree = "<group>"; };
+		94D2472B218A49ED00EE71D0 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		94E39EC82183383100D11274 /* PinIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PinIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94E39ECB2183383100D11274 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94E39ECD2183383100D11274 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -72,10 +76,12 @@
 			children = (
 				94E39ECB2183383100D11274 /* AppDelegate.swift */,
 				94E39ECD2183383100D11274 /* GameViewController.swift */,
+				94D247292189043400EE71D0 /* PersistentDataStore.swift */,
 				94E39EE121837B9700D11274 /* MenuViewController.swift */,
 				9475CF402184EF560060A395 /* MenuButton.swift */,
 				94E39EE321837D7400D11274 /* UIView+Extension.swift */,
 				94E39ECF2183383100D11274 /* Main.storyboard */,
+				94D2472B218A49ED00EE71D0 /* HelpViewController.swift */,
 				94E39ED22183383200D11274 /* Assets.xcassets */,
 				94E39ED42183383200D11274 /* LaunchScreen.storyboard */,
 				94E39EDD2183406700D11274 /* landmarks.txt */,
@@ -164,8 +170,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94D2472C218A49ED00EE71D0 /* HelpViewController.swift in Sources */,
 				94E39ECE2183383100D11274 /* GameViewController.swift in Sources */,
 				94E39EE221837B9700D11274 /* MenuViewController.swift in Sources */,
+				94D2472A2189043400EE71D0 /* PersistentDataStore.swift in Sources */,
 				9475CF412184EF560060A395 /* MenuButton.swift in Sources */,
 				94E39EE421837D7400D11274 /* UIView+Extension.swift in Sources */,
 				94E39ECC2183383100D11274 /* AppDelegate.swift in Sources */,
