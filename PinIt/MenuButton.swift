@@ -11,7 +11,6 @@ import UIKit
 @IBDesignable class MenuButton: UIButton {
 
     override func awakeFromNib() {
-//        layer.cornerRadius = 8
     }
     
     @IBInspectable var borderWidth: CGFloat = 0.0 {

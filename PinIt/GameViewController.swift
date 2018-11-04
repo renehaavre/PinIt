@@ -206,13 +206,6 @@ class GameViewController: UIViewController, MKMapViewDelegate {
         // Write score to Documents directory for persistant storage
         let highscore = String(String(score) + " " + formattedDate + "\n")
         let fileURL = highscoreDir!.appendingPathComponent("highscores")
-//
-//            do {
-//                try highscore.write(to: fileURL, atomically: false, encoding: .utf8)
-//                let highscores = try? String(contentsOf: fileURL, encoding: .utf8)
-//                print(highscores!)
-//            }
-//            catch {/* error handling here */}
         
         
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
@@ -229,7 +222,6 @@ class GameViewController: UIViewController, MKMapViewDelegate {
                     fileHandle.seekToEndOfFile()
                     fileHandle.write(highscore.data(using: .utf8)!)
                     fileHandle.closeFile()
-//                    print(try? String(contentsOf: fileURL, encoding: .utf8))
                 } catch {
                     print("Error writing to file \(error)")
                 }
