@@ -17,12 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Xqh-6I-drL">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Pyw-hI-Osd">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
-                            <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1cK-R5-SOj">
+                            </mapView>
+                            <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MUC-UM-o4Y">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pinit.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ueq-nR-KUE">
                                 <rect key="frame" x="26" y="70" width="268" height="81"/>
@@ -100,25 +100,28 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="1cK-R5-SOj" firstAttribute="top" secondItem="0Tq-DH-SY6" secondAttribute="top" id="2cg-hd-c8U"/>
+                            <constraint firstItem="MUC-UM-o4Y" firstAttribute="top" secondItem="0Tq-DH-SY6" secondAttribute="top" id="4q2-aG-WAQ"/>
+                            <constraint firstAttribute="bottom" secondItem="Pyw-hI-Osd" secondAttribute="bottom" id="BwL-R4-PWb"/>
                             <constraint firstItem="Ueq-nR-KUE" firstAttribute="centerX" secondItem="0Tq-DH-SY6" secondAttribute="centerX" id="Dox-bj-xbS"/>
-                            <constraint firstAttribute="bottom" secondItem="1cK-R5-SOj" secondAttribute="bottom" id="F0E-6q-9aS"/>
+                            <constraint firstAttribute="bottom" secondItem="MUC-UM-o4Y" secondAttribute="bottom" id="FH1-6d-DQS"/>
+                            <constraint firstItem="MUC-UM-o4Y" firstAttribute="leading" secondItem="0Tq-DH-SY6" secondAttribute="leading" id="Gtk-Mg-e2X"/>
                             <constraint firstItem="qIV-mu-9Lm" firstAttribute="top" secondItem="Ezh-Hs-3KO" secondAttribute="bottom" constant="30" id="JYX-76-vXG"/>
                             <constraint firstItem="Ezh-Hs-3KO" firstAttribute="centerY" secondItem="0Tq-DH-SY6" secondAttribute="centerY" id="O7W-yA-zEZ"/>
+                            <constraint firstItem="Pyw-hI-Osd" firstAttribute="top" secondItem="0Tq-DH-SY6" secondAttribute="top" id="Tnu-eQ-qMw"/>
                             <constraint firstItem="Ueq-nR-KUE" firstAttribute="top" secondItem="Vh4-KZ-oXd" secondAttribute="top" constant="50" id="VBq-c5-EFj"/>
-                            <constraint firstItem="Xqh-6I-drL" firstAttribute="leading" secondItem="0Tq-DH-SY6" secondAttribute="leading" id="VIn-0c-a9a"/>
-                            <constraint firstAttribute="bottom" secondItem="Xqh-6I-drL" secondAttribute="bottom" id="W82-co-oRW"/>
-                            <constraint firstAttribute="trailing" secondItem="Xqh-6I-drL" secondAttribute="trailing" id="dEq-gC-QCh"/>
-                            <constraint firstItem="Xqh-6I-drL" firstAttribute="top" secondItem="0Tq-DH-SY6" secondAttribute="top" id="elJ-6S-d3u"/>
                             <constraint firstItem="Ezh-Hs-3KO" firstAttribute="centerX" secondItem="0Tq-DH-SY6" secondAttribute="centerX" id="g1R-ip-eb1"/>
                             <constraint firstItem="qIV-mu-9Lm" firstAttribute="centerX" secondItem="0Tq-DH-SY6" secondAttribute="centerX" id="h3L-FN-qsk"/>
-                            <constraint firstItem="1cK-R5-SOj" firstAttribute="leading" secondItem="0Tq-DH-SY6" secondAttribute="leading" id="hOb-pp-T2N"/>
                             <constraint firstItem="IU3-mg-jjH" firstAttribute="centerX" secondItem="0Tq-DH-SY6" secondAttribute="centerX" id="hfA-Ur-Oh8"/>
-                            <constraint firstAttribute="trailing" secondItem="1cK-R5-SOj" secondAttribute="trailing" id="mYJ-Pp-Wmp"/>
                             <constraint firstItem="IU3-mg-jjH" firstAttribute="top" secondItem="qIV-mu-9Lm" secondAttribute="bottom" constant="30" id="pYR-uF-ZbX"/>
+                            <constraint firstAttribute="trailing" secondItem="Pyw-hI-Osd" secondAttribute="trailing" id="piQ-Dr-dfl"/>
+                            <constraint firstAttribute="trailing" secondItem="MUC-UM-o4Y" secondAttribute="trailing" id="uhi-Ra-8D1"/>
+                            <constraint firstItem="Pyw-hI-Osd" firstAttribute="leading" secondItem="0Tq-DH-SY6" secondAttribute="leading" id="xkG-lK-XWj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vh4-KZ-oXd"/>
                     </view>
+                    <connections>
+                        <outlet property="menuMapView" destination="Pyw-hI-Osd" id="9mJ-Nw-Sb6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ThS-5J-0P9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -272,7 +275,6 @@
     </scenes>
     <resources>
         <image name="back" width="32" height="32"/>
-        <image name="bg.jpg" width="3387" height="3387"/>
         <image name="pinit.png" width="3500" height="866"/>
     </resources>
     <inferredMetricsTieBreakers>
