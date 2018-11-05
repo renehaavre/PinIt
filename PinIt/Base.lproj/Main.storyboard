@@ -22,7 +22,23 @@
                             </mapView>
                             <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MUC-UM-o4Y">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhN-g3-uSj">
+                                        <rect key="frame" x="278" y="534" width="22" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="IFt-5c-NNP"/>
+                                            <constraint firstAttribute="width" constant="22" id="uN0-FP-rn0"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="aqe-on-f9b" kind="show" id="yuh-y0-8E2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="bhN-g3-uSj" secondAttribute="bottom" constant="12" id="2ia-Em-cX8"/>
+                                    <constraint firstAttribute="trailing" secondItem="bhN-g3-uSj" secondAttribute="trailing" constant="20" id="WzT-oL-TE3"/>
+                                </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pinit.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ueq-nR-KUE">
                                 <rect key="frame" x="26" y="70" width="268" height="81"/>
@@ -127,6 +143,81 @@
             </objects>
             <point key="canvasLocation" x="-766.875" y="133.09859154929578"/>
         </scene>
+        <!--High Score View Controller-->
+        <scene sceneID="qr1-ol-Nrb">
+            <objects>
+                <viewController id="aqe-on-f9b" customClass="HighScoreViewController" customModule="PinIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nuu-3D-lZ7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YD0-ZJ-he4">
+                                <rect key="frame" x="0.0" y="165" width="320" height="403"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="separatorInset" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="sIY-Qr-2Cn" style="IBUITableViewCellStyleDefault" id="LUe-Hw-plg">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LUe-Hw-plg" id="plx-ZA-aGO">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sIY-Qr-2Cn">
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gl1-qX-sJT">
+                                <rect key="frame" x="10" y="77" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="e2V-mS-JyM"/>
+                                    <constraint firstAttribute="height" constant="32" id="gSY-VI-CdM"/>
+                                </constraints>
+                                <state key="normal" image="back"/>
+                                <connections>
+                                    <segue destination="8b4-Ve-lrz" kind="show" id="US5-WH-RK5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Highscores" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHq-Lp-Rxi">
+                                <rect key="frame" x="0.0" y="56" width="320" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="yFe-HJ-iNJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="46"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nHq-Lp-Rxi" firstAttribute="top" secondItem="mQj-s8-jox" secondAttribute="top" constant="36" id="1Nf-eP-pBP"/>
+                            <constraint firstItem="nHq-Lp-Rxi" firstAttribute="leading" secondItem="YD0-ZJ-he4" secondAttribute="leading" id="CAb-aF-nfE"/>
+                            <constraint firstItem="nHq-Lp-Rxi" firstAttribute="trailing" secondItem="YD0-ZJ-he4" secondAttribute="trailing" id="LAX-5J-iCI"/>
+                            <constraint firstItem="Gl1-qX-sJT" firstAttribute="top" secondItem="Nuu-3D-lZ7" secondAttribute="top" constant="77" id="NTT-8a-sqf"/>
+                            <constraint firstAttribute="trailing" secondItem="nHq-Lp-Rxi" secondAttribute="trailing" id="U0R-Ik-IXH"/>
+                            <constraint firstItem="Gl1-qX-sJT" firstAttribute="leading" secondItem="Nuu-3D-lZ7" secondAttribute="leading" constant="10" id="fGE-HQ-9ec"/>
+                            <constraint firstItem="nHq-Lp-Rxi" firstAttribute="leading" secondItem="Nuu-3D-lZ7" secondAttribute="leading" id="g5n-xB-HjI"/>
+                            <constraint firstItem="YD0-ZJ-he4" firstAttribute="bottom" secondItem="mQj-s8-jox" secondAttribute="bottom" id="gIH-4r-dWY"/>
+                            <constraint firstItem="YD0-ZJ-he4" firstAttribute="top" secondItem="nHq-Lp-Rxi" secondAttribute="bottom" constant="34" id="rDt-P3-SBw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mQj-s8-jox"/>
+                    </view>
+                    <connections>
+                        <outlet property="highScoreTableView" destination="YD0-ZJ-he4" id="UmE-hs-8aH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aco-Bi-sjG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-768.75" y="904.22535211267609"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="4Bs-7x-7XH">
             <objects>
@@ -169,7 +260,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ufA-QR-9g1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="401" y="421"/>
+            <point key="canvasLocation" x="249" y="904"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -270,7 +361,7 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="403" y="-361"/>
+            <point key="canvasLocation" x="251" y="133"/>
         </scene>
     </scenes>
     <resources>
@@ -279,6 +370,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Tss-rT-cGE"/>
-        <segue reference="qVr-xt-UOE"/>
+        <segue reference="US5-WH-RK5"/>
     </inferredMetricsTieBreakers>
 </document>

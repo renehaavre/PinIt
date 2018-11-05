@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		940BD0F22190F5A300357C66 /* HighScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940BD0F12190F5A300357C66 /* HighScoreViewController.swift */; };
 		9475CF392184A5920060A395 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9475CF382184A5910060A395 /* bg.jpg */; };
 		9475CF3B2184A8810060A395 /* bg1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9475CF3A2184A8800060A395 /* bg1.jpg */; };
 		9475CF3F2184B1E50060A395 /* pinit.png in Resources */ = {isa = PBXBuildFile; fileRef = 9475CF3E2184B1E40060A395 /* pinit.png */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		940BD0F12190F5A300357C66 /* HighScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreViewController.swift; sourceTree = "<group>"; };
 		9475CF382184A5910060A395 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
 		9475CF3A2184A8800060A395 /* bg1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg1.jpg; sourceTree = "<group>"; };
 		9475CF3E2184B1E40060A395 /* pinit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinit.png; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				94E39ECD2183383100D11274 /* GameViewController.swift */,
 				94D247292189043400EE71D0 /* PersistentDataStore.swift */,
 				94E39EE121837B9700D11274 /* MenuViewController.swift */,
+				940BD0F12190F5A300357C66 /* HighScoreViewController.swift */,
 				9475CF402184EF560060A395 /* MenuButton.swift */,
 				94E39EE321837D7400D11274 /* UIView+Extension.swift */,
 				94E39ECF2183383100D11274 /* Main.storyboard */,
@@ -173,6 +176,7 @@
 				94D2472C218A49ED00EE71D0 /* HelpViewController.swift in Sources */,
 				94E39ECE2183383100D11274 /* GameViewController.swift in Sources */,
 				94E39EE221837B9700D11274 /* MenuViewController.swift in Sources */,
+				940BD0F22190F5A300357C66 /* HighScoreViewController.swift in Sources */,
 				94D2472A2189043400EE71D0 /* PersistentDataStore.swift in Sources */,
 				9475CF412184EF560060A395 /* MenuButton.swift in Sources */,
 				94E39EE421837D7400D11274 /* UIView+Extension.swift in Sources */,
