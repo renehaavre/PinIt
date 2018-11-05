@@ -239,14 +239,20 @@ class GameViewController: UIViewController, MKMapViewDelegate {
 
     }
     
-//    func getHighScores() -> String {
-//        do {
-//            let highscores = try? String(contentsOf: fileURL, encoding: .utf8)
-//        }
-//        catch {/* error handling here */}
-//
-//        return highscores
-//    }
+    func getHighScores() -> String {
+        
+        var highscores = ""
+        
+        do {
+            let filePath = highscoreDir!.appendingPathComponent("highscores")
+            highscores = try String(contentsOf: filePath, encoding: .utf8)
+        }
+        catch {
+            print("Error reading highscores directory.")
+        }
+
+        return highscores
+    }
 
 }
 
