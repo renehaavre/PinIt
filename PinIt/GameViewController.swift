@@ -84,6 +84,9 @@ class GameViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let currentScores = getHighScores()
+        print("Current highscores: ", currentScores)
+        
         mapView.delegate = self
         mapView.mapType = .satellite
         
